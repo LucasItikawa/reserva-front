@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "reserva-api-production-0bc9.up.railway.app/reservas";
+const API_URL = "https://reserva-api-production-0bc9.up.railway.app/reservas";
 
 const reservaService = {
   getAll: async () => {
