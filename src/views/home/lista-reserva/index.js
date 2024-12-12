@@ -12,12 +12,12 @@ const ListaReserva = ({ reservas }) => {
           style={{ width: "100%", marginTop: 16 }}
         >
           <p>
-            <strong>Inicio:</strong>{" "}
-            {dayjs(reserva.inicio).format("DD/MM/YYYY HH:mm")}
+            <strong>Dia:</strong>{" "}
+            {dayjs(reserva.dia).format("DD/MM/YYYY HH:mm")}
           </p>
           <p>
-            <strong>Fim:</strong>{" "}
-            {dayjs(reserva.fim).format("DD/MM/YYYY HH:mm")}
+            <strong>Horário:</strong>{" "}
+            {dayjs(reserva.horario).format("DD/MM/YYYY HH:mm")}
           </p>
         </Card>
       ))}
