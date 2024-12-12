@@ -16,8 +16,7 @@ const ListaReserva = ({ reservas }) => {
             {dayjs(reserva.dia).format("DD/MM/YYYY HH:mm")}
           </p>
           <p>
-            <strong>Horário:</strong>{" "}
-            {dayjs(reserva.horario).format("DD/MM/YYYY HH:mm")}
+            <strong>Horário:</strong> {dayjs(reserva.horario).format("HH:mm")}
           </p>
         </Card>
       ))}
