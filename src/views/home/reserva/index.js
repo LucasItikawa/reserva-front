@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button, Select, DatePicker, Row } from "antd";
+import { Form, Button, Select, TimePicker, Row } from "antd";
 import { localEnum } from "../../../enum/local-enum";
 
 const Reserva = () => {
@@ -50,7 +50,7 @@ const Reserva = () => {
           },
         ]}
       >
-        <DatePicker picker="time" style={{ width: "100%" }} />
+        <TimePicker format="HH:mm" style={{ width: "100%" }} />
       </Form.Item>
 
       <Form.Item>
