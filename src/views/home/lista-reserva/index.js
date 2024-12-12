@@ -2,21 +2,7 @@ import { Card } from "antd";
 import dayjs from "dayjs";
 import React from "react";
 
-const ListaReserva = () => {
-  const reservas = [
-    {
-      id: 1,
-      local: "Sala 1",
-      inicio: "2021-09-10T10:00:00",
-      fim: "2021-09-10T11:00:00",
-    },
-    {
-      id: 2,
-      local: "Sala 2",
-      inicio: "2021-09-10T10:00:00",
-      fim: "2021-09-10T11:00:00",
-    },
-  ];
+const ListaReserva = ({ reservas }) => {
   return (
     <div>
       {reservas.map((reserva) => (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Row, Col, Card, Button, Alert } from "antd";
 import Reserva from "./reserva";
 import { ArrowLeftOutlined } from "@ant-design/icons";
@@ -8,6 +8,7 @@ import reservaService from "../../service/reserva-service";
 const Home = () => {
   const [form] = Form.useForm();
   const [steps, setSteps] = useState(0);
+  const [reservas, setReservas] = useState([]);
 
   const onFinish = async (values) => {
     try {
@@ -19,12 +20,17 @@ const Home = () => {
     }
   };
 
+  useEffect(async () => {
+    const resp = await reservaService.getAll();
+    setReservas(resp);
+  }, []);
+
   const renderForm = () => {
     switch (steps) {
       case 1:
         return <Reserva />;
       case 2:
-        return <ListaReserva />;
+        return <ListaReserva reservas={reservas} />;
 
       default:
     }
