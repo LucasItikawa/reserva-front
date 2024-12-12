@@ -20,10 +20,27 @@ const Home = () => {
     }
   };
 
-  useEffect(async () => {
-    const resp = await reservaService.getAll();
-    setReservas(resp);
-    // eslint-disable-next-line
+  const obterDados = async () => {
+    try {
+      await Promise.all([getReservas()]);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const getReservas = async () => {
+    try {
+      const response = await reservaService.getAll();
+      setReservas(response);
+    } catch (error) {
+      console.error("Erro ao buscar todas as reservas:", error);
+      throw error;
+    }
+  };
+
+  useEffect(() => {
+    obterDados();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderForm = () => {
