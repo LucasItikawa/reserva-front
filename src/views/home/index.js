@@ -23,6 +23,7 @@ const Home = () => {
   useEffect(async () => {
     const resp = await reservaService.getAll();
     setReservas(resp);
+    // eslint-disable-next-line
   }, []);
 
   const renderForm = () => {
