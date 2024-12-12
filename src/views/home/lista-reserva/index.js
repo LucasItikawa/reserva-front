@@ -1,6 +1,7 @@
 import { Card } from "antd";
 import dayjs from "dayjs";
 import React from "react";
+import { localEnum } from "../../../enum/local-enum";
 
 const ListaReserva = ({ reservas }) => {
   return (
@@ -8,7 +9,7 @@ const ListaReserva = ({ reservas }) => {
       {reservas.map((reserva) => (
         <Card
           key={reserva.id}
-          title={reserva.local}
+          title={localEnum.find((local) => local.id === reserva.local).local}
           style={{ width: "100%", marginTop: 16 }}
         >
           <p>
