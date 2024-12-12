@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Row, Col, Card, Button, Alert } from "antd";
+import { Form, Row, Col, Card, Button, message } from "antd";
 import Reserva from "./reserva";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import ListaReserva from "./lista-reserva";
@@ -13,8 +13,8 @@ const Home = () => {
   const onFinish = async (values) => {
     try {
       await reservaService.create(values);
-      Alert.success("Reserva criada com sucesso!");
       setSteps(0);
+      message.success("Reserva criada com sucesso!");
     } catch (error) {
       console.error("Erro ao criar a reserva:", error);
     }
