@@ -45,12 +45,12 @@ const Home = () => {
 
   const renderForm = () => {
     switch (steps) {
+      case 0:
+        return null;
       case 1:
         return <Reserva />;
       case 2:
         return <ListaReserva reservas={reservas} />;
-
-      default:
     }
   };
 
