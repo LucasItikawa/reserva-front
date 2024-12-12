@@ -1,9 +1,7 @@
 import React from "react";
 import { Form, Button, Select, DatePicker, Row } from "antd";
-
 import { localEnum } from "../../../enum/local-enum";
 
-const RangePicker = DatePicker.RangePicker;
 const Reserva = () => {
   const locaisOptions = localEnum.map((local) => ({
     value: local.id,
