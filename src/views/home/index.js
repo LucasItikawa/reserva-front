@@ -39,6 +39,17 @@ const Home = () => {
     }
   };
 
+  const deleteReserva = async (id) => {
+    try {
+      await reservaService.delete(id);
+      obterDados();
+      message.success("Reserva excluída com sucesso!");
+    } catch (error) {
+      console.error("Erro ao excluir a reserva:", error);
+      message.error("Erro ao excluir a reserva.");
+    }
+  };
+
   useEffect(() => {
     obterDados();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -51,7 +62,7 @@ const Home = () => {
       case 1:
         return <Reserva />;
       case 2:
-        return <ListaReserva reservas={reservas} />;
+        return <ListaReserva reservas={reservas} onDelete={deleteReserva} />;
       default:
         return null;
     }

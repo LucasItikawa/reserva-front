@@ -1,9 +1,10 @@
-import { Card } from "antd";
+import { Card, Button } from "antd";
 import dayjs from "dayjs";
 import React from "react";
 import { localEnum } from "../../../enum/local-enum";
+import { DeleteOutlined } from "@ant-design/icons";
 
-const ListaReserva = ({ reservas }) => {
+const ListaReserva = ({ reservas, onDelete }) => {
   return (
     <div>
       {reservas.map((reserva) => (
@@ -11,6 +12,16 @@ const ListaReserva = ({ reservas }) => {
           key={reserva.id}
           title={localEnum.find((local) => local.id === reserva.local).local}
           style={{ width: "100%", marginTop: 16 }}
+          actions={[
+            <Button
+              type="primary"
+              danger
+              icon={<DeleteOutlined />}
+              onClick={() => onDelete(reserva.id)}
+            >
+              Excluir
+            </Button>
+          ]}
         >
           <p>
             <strong>Dia:</strong>{" "}
