@@ -13,6 +13,7 @@ const Home = () => {
   const onFinish = async (values) => {
     try {
       await reservaService.create(values);
+      obterDados();
       setSteps(0);
       message.success("Reserva criada com sucesso!");
     } catch (error) {
