@@ -51,6 +51,8 @@ const Home = () => {
         return <Reserva />;
       case 2:
         return <ListaReserva reservas={reservas} />;
+      default:
+        return null;
     }
   };
 
