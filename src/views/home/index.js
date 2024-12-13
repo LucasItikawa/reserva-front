@@ -59,8 +59,8 @@ const Home = () => {
       justify="center"
       style={{
         backgroundColor: "#1c1c1c",
-        width: "100vw",
-        minHeight: "100vh",
+        width: "100vh",
+        height: "100vh",
         color: "#ffffff",
         paddingBottom: "20px",
       }}
