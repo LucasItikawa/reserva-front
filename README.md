@@ -10,8 +10,8 @@ Você pode acessar a aplicação através do seguinte link:
 ## Scripts Disponíveis
 
 No diretório do projeto, você pode executar:
-
-### `npm start`
+npm install
+npm start
 
 Executa a aplicação em modo de desenvolvimento.\
 Abra [http://localhost:3000](http://localhost:3000) para visualizá-la no navegador.
